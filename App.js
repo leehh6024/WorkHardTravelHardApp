@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  TextInput,
+} from "react-native";
 import { theme } from "./colors.js";
 
 export default function App() {
   const [working, setWorking] = useState(true);
+  const [text, setText] = useState("");
   const travel = () => setWorking(false);
   const work = () => setWorking(true);
+  const onChangeText = (payload) => setText(payload);
 
   return (
     <View style={styles.container}>
@@ -30,6 +38,14 @@ export default function App() {
           </Text>
         </TouchableOpacity>
       </View>
+      <TextInput
+        // keyboardType="web-search"
+        // returnKeyType="send"
+        onChangeText={onChangeText}
+        value={text}
+        placeholder={working ? "Add to yout work" : "Where do you want to go?"}
+        style={styles.input}
+      />
     </View>
   );
 }
@@ -48,5 +64,13 @@ const styles = StyleSheet.create({
   btnText: {
     fontSize: 38,
     fontWeight: "600",
+  },
+  input: {
+    backgroundColor: "white",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 30,
+    marginTop: 20,
+    fontSize: 18,
   },
 });
