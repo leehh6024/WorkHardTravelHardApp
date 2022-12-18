@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   header: {
     justifyContent: "space-between",
     flexDirection: "row",
-    marginTop: 100,
+    marginTop: 60,
   },
   btnText: {
     fontSize: 38,
