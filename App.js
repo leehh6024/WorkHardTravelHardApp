@@ -43,6 +43,7 @@ export default function App() {
         // returnKeyType="send"
         onChangeText={onChangeText}
         value={text}
+        placeholderTextColor="red"
         placeholder={working ? "Add to yout work" : "Where do you want to go?"}
         style={styles.input}
       />
