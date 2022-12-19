@@ -16,6 +16,10 @@ export default function App() {
   const work = () => setWorking(true);
   const onChangeText = (payload) => setText(payload);
 
+  const addToDo = () => {
+    alert(text);
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -40,7 +44,8 @@ export default function App() {
       </View>
       <TextInput
         // keyboardType="web-search"
-        // returnKeyType="send"
+        returnKeyType="done"
+        onSubmitEditing={addToDo}
         onChangeText={onChangeText}
         value={text}
         placeholderTextColor="red"
